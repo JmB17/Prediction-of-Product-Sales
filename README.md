@@ -49,6 +49,26 @@ Big Mart Sales Prediction - [datahack.analyticsvidhya.com](https://datahack.anal
 - The Mean Square Error was ₹1,118,185.97
 - The Root Mean Square Error is ₹1,057.44
 
+## Importances and Coefficients
+- LinearRegression coefficients plot 
+![LinearRegression coefficients plot:](http://localhost:8888/view/Top-3-coefficients.png)
+    - Outlet Type Supermarket Type 3
+        - Having an Outlet type of Supermarket Type 3 increases Item Outlet Sales by ₹3,132.40
+    - Outlet Type Supermarket Type 1
+        - Having an Outlet type of Supermarket Type 1 increases Item Outlet Sales by ₹1,873.91
+    - Outlet Type Supermarket Type 2
+        - Having an Outlet type of Supermarket Type 2 increases Item Outlet Sales by ₹1,424.40
+Looking at the top three coefficients this makes sense since Outlet Type Supermarket Type 3 had the most sales overage followed by Outlet Type Supermarket Type 1 and then Outlet Type Supermarket Type 2.
+
+- Tree-Based Model feature importance
+![Tree-Based Model feature importance plot:](http://localhost:8888/view/Top-5-most-important-features.png)
+    - The top 5 most importance features to our Tree-based model are:
+        - "Item_MRP" ( Maximun Retail Price (list price) of the product)
+        - "Outlet_Type_Supermarket Type3" (Outlet Supermarket type 3)
+        - "Item_Visibility" (The percentage of total display area of all products in a store allocated to the particular product)
+        - "Outlet_Type_Supermarket Type1" (Outlet Supermarket type 1)
+        - "Item_Weight" (Weight of product)
+
 ## Self Recommendations
 - After working on this data set there are is some work still be done on my part. These results won't be the end of my predictions, I plan to add more models and do more tuning on my models. 
 - Adding on, I plan to dive deeper into my exploratory and explanatory data anaylsis to get graphs more tailored towards profits and prices and include more functions and overall clean up my code
