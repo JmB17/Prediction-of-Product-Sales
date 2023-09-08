@@ -51,17 +51,17 @@ Big Mart Sales Prediction - [datahack.analyticsvidhya.com](https://datahack.anal
 
 ## Importances and Coefficients
 - LinearRegression coefficients plot 
-![LinearRegression coefficients plot:](file:///C:/Users/Justice/Downloads/Top-3-coefficients.png)
+![LinearRegression coefficients plot:](http://localhost:8888/view/Images/Top-5-most-important-features.png)
     - Outlet Type Supermarket Type 3
-        - Having an Outlet type of Supermarket Type 3 increases Item Outlet Sales by ₹3,132.40
+        - Being sold in an Outlet type of Supermarket Type 3 increases Item Outlet Sales by ₹3,132.40
     - Outlet Type Supermarket Type 1
-        - Having an Outlet type of Supermarket Type 1 increases Item Outlet Sales by ₹1,873.91
+        - Being sold in an Outlet type of Supermarket Type 1 increases Item Outlet Sales by ₹1,873.91
     - Outlet Type Supermarket Type 2
-        - Having an Outlet type of Supermarket Type 2 increases Item Outlet Sales by ₹1,424.40
+        - Being sold in an Outlet type of Supermarket Type 2 increases Item Outlet Sales by ₹1,424.40
 Looking at the top three coefficients this makes sense since Outlet Type Supermarket Type 3 had the most sales overage followed by Outlet Type Supermarket Type 1 and then Outlet Type Supermarket Type 2.
 
 - Tree-Based Model feature importance
-![Tree-Based Model feature importance plot:](file:///C:/Users/Justice/Downloads/Top-5-most-important-features.png)
+![Tree-Based Model feature importance plot:](http://localhost:8888/view/Images/Top-3-coefficients.png)
     - The top 5 most importance features to our Tree-based model are:
         - "Item_MRP" ( Maximun Retail Price (list price) of the product)
         - "Outlet_Type_Supermarket Type3" (Outlet Supermarket type 3)
@@ -71,7 +71,7 @@ Looking at the top three coefficients this makes sense since Outlet Type Superma
 
 ## Global Explanations
 
-![Summary Plot Bar:](file:///C:/Users/Justice/Downloads/summary_plot_bar(1).png)
+![Summary Plot Bar:](http://localhost:8888/view/Images/summary_plot_bar.png)
 - Comparing our top 5 feature importance to our top 5 SHAP value there are some similarities and differences. Item_MRP is still both at number 1 for SHAP values and features importance.
     - Outlet_Type_Supermarket Type3 is placed at number 3 for SHAP values but placed at number 2 for feature importances. 
     - Outlet_Type_Supermarket Type1 is placed at number 2 for SHAP values but placed at number 4 for feature importances. 
@@ -79,7 +79,7 @@ Looking at the top three coefficients this makes sense since Outlet Type Superma
     - Outlet_Size_Medium is new to our top 5 SHAP values that isn't shown in our feature importance.
     - Item_Weight wasn't shown in our top 5 SHAP values but shown in our top 5 feature importance.
     
-![Summary Plot Dot:](file:///C:/Users/Justice/Downloads/summary_plot_dot.png)
+![Summary Plot Dot:](http://localhost:8888/view/Images/summary_plot_dot.png)
 - SHAP Summary Plot Interpretation:
     - Item_MRP
         - The blue values are on the negtive side and the red values are on the postive side.
