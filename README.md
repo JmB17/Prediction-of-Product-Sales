@@ -51,7 +51,7 @@ Big Mart Sales Prediction - [datahack.analyticsvidhya.com](https://datahack.anal
 
 ## Importances and Coefficients
 - LinearRegression coefficients plot 
-![LinearRegression coefficients plot:](http://localhost:8888/view/Images/Top-5-most-important-features.png)
+![LinearRegression coefficients plot:](Images/Top-5-most-important-features.png)
     - Outlet Type Supermarket Type 3
         - Being sold in an Outlet type of Supermarket Type 3 increases Item Outlet Sales by ₹3,132.40
     - Outlet Type Supermarket Type 1
@@ -61,7 +61,7 @@ Big Mart Sales Prediction - [datahack.analyticsvidhya.com](https://datahack.anal
 Looking at the top three coefficients this makes sense since Outlet Type Supermarket Type 3 had the most sales overage followed by Outlet Type Supermarket Type 1 and then Outlet Type Supermarket Type 2.
 
 - Tree-Based Model feature importance
-![Tree-Based Model feature importance plot:](http://localhost:8888/view/Images/Top-3-coefficients.png)
+![Tree-Based Model feature importance plot:](Images/Top-3-coefficients.png)
     - The top 5 most importance features to our Tree-based model are:
         - "Item_MRP" ( Maximun Retail Price (list price) of the product)
         - "Outlet_Type_Supermarket Type3" (Outlet Supermarket type 3)
@@ -71,7 +71,7 @@ Looking at the top three coefficients this makes sense since Outlet Type Superma
 
 ## Global Explanations
 
-![Summary Plot Bar:](http://localhost:8888/view/Images/summary_plot_bar.png)
+![Summary Plot Bar:](Images/summary_plot_bar.png)
 - Comparing our top 5 feature importance to our top 5 SHAP value there are some similarities and differences. Item_MRP is still both at number 1 for SHAP values and features importance.
     - Outlet_Type_Supermarket Type3 is placed at number 3 for SHAP values but placed at number 2 for feature importances. 
     - Outlet_Type_Supermarket Type1 is placed at number 2 for SHAP values but placed at number 4 for feature importances. 
@@ -79,7 +79,7 @@ Looking at the top three coefficients this makes sense since Outlet Type Superma
     - Outlet_Size_Medium is new to our top 5 SHAP values that isn't shown in our feature importance.
     - Item_Weight wasn't shown in our top 5 SHAP values but shown in our top 5 feature importance.
     
-![Summary Plot Dot:](http://localhost:8888/view/Images/summary_plot_dot.png)
+![Summary Plot Dot:](Images/summary_plot_dot.png)
 - SHAP Summary Plot Interpretation:
     - Item_MRP
         - The blue values are on the negtive side and the red values are on the postive side.
@@ -96,7 +96,36 @@ Looking at the top three coefficients this makes sense since Outlet Type Superma
             The model will increase the value for Item_Outlet_Sales.
         - The blue values are on the negative side and Outlet_Type_Supermarket Type1 equals 0, showing it is a not a Supermarket Type1.
             Then the model will reduce the value for 'Item_Outlet_Sales'.
+ 
+## Local Explanations
+![Force plot high mrp:](Images/force_plot_high_mrp.png)
+- Looking at the force plot we can see the example of Supermarket type 1 which has a higher Item MRP:
+    - As we can see that having a high maximum retail price, an outlet supermarket type 1 increases our sales of product in this specific store. Other features that made this store produce less products sales are: Not being an outlet supermarket type 3, average item weight of 16.2, and not being a medium sized outlet.
 
+![LIME plot high mrp:](Images/lime_plot_high_mrp.png)
+- As we can see above this Supermarket type 1 which has a higher Item MRP has a predicted products sales of ₹2350.07
+- Features that are associated with lowing product sales:
+    - Outlet_Type_Supermarket Type3 < 0
+    - Outlet_Size_Medium < 0
+    - Outlet_Type_Supermarket Type2 < 0
+- 2 out of the top 5 features were associated with increasing product sales:
+    - Outlet_Type_Supermarket Type1 > 0
+    - Item_MRP > 142.7
+
+![Force plot low mrp:](Images/force_plot_low_mrp.png)
+- Looking at the force plot we can see the example of Supermarket type 1 which has a lower Item MRP:
+    - As we can see that having a low maximum retail price, an outlet supermarket type 1 increases our sales of product in this specific store. Other features that made this store produce less products sales are: Not being an outlet supermarket type 3, average item weight of 9.4, and not being a medium sized outlet.
+
+![LIME plot low mrp:](Images/lime_plot_low_mrp.png)
+- As we can see above this Supermarket type 1 which has a higher Item MRP has a predicted products sales of ₹468.70
+- Features that are associated with lowing product sales:
+    - Outlet_Type_Supermarket Type3 < 0
+    - Item_MRP <= 98.66
+    - Outlet_Size_Medium < 0
+    - Item_Type_Seafood <= 0
+    - Outlet_Type_Supermarket Type2 < 0
+- 1 out of the top 5 features were associated with increasing product sales:
+    - Outlet_Type_Supermarket Type2 > 0
 
 ## Self Recommendations
 - After working on this data set there are is some work still be done on my part. These results won't be the end of my predictions, I plan to add more models and do more tuning on my models. 
